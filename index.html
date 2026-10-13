@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weekender</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Weekender</h1>
+    <nav>
+      <button id="nav-search" class="navbtn is-active">Find events</button>
+      <button id="nav-going" class="navbtn">Going <span id="going-count">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="view-search">
+      <form id="search-form" novalidate>
+        <label class="field field--city">City
+          <input id="city" type="text" placeholder="e.g. Atlanta" required>
+        </label>
+        <label class="field">From
+          <input id="start" type="date" required>
+        </label>
+        <label class="field">To
+          <input id="end" type="date" required>
+        </label>
+        <button type="button" id="weekend-btn" class="btn btn--ghost">This weekend</button>
+        <button type="submit" class="btn btn--primary">Find events</button>
+      </form>
+
+      <p id="form-error" class="error" role="alert" hidden></p>
+      <div id="place-picker" hidden></div>
+
+      <div id="filters" class="filters" role="group" aria-label="Event category" hidden>
+        <button class="chip is-active" data-cat="all">All</button>
+        <button class="chip" data-cat="concerts">Concerts</button>
+        <button class="chip" data-cat="sports">Sports</button>
+        <button class="chip" data-cat="shows">Shows</button>
+      </div>
+
+      <div id="status" aria-live="polite"></div>
+      <div id="results" class="grid"></div>
+    </section>
+
+    <section id="view-going" hidden>
+      <div class="going-head">
+        <h2>My Going list</h2>
+        <button id="clear-going" class="btn btn--ghost">Clear all</button>
+      </div>
+      <div id="going-list"></div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

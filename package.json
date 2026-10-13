@@ -1,0 +1,13 @@
+{
+  "name": "weekender",
+  "version": "1.0.0",
+  "description": "Find weekend events and see the forecast for each one",
+  "private": true,
+  "scripts": {
+    "server": "serve .",
+    "start": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
